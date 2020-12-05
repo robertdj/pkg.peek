@@ -1,0 +1,17 @@
+Package: archivist
+Title: Get information from R package archives
+Version: 0.0.1
+Authors@R: person("Robert", "Dahl Jacobsen", role = c("aut", "cre"), email = "git@dahl-jacobsen.dk")
+Description: Get information from R package archives (in `tar.gz`, `tgz` or `zip` format).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/robertdj/archivist
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends:
+    R (>= 3.5)
+Imports:
+    utils
+Suggests:
+    testthat (>= 2.1.0)
