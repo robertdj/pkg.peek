@@ -2,6 +2,7 @@ pkg.peek
 ========
 
 <!-- badges: start -->
+[![R build status](https://github.com/robertdj/pkg.peek/workflows/R-CMD-check/badge.svg)](https://github.com/robertdj/pkg.peek/actions)
 <!-- badges: end -->
 
 R packages are bundled in a `tar.gz`, a `tgz` or a `zip` archive.
