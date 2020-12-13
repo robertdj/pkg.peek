@@ -14,7 +14,7 @@ get_file_in_archive <- function(archive, package_file) {
         assertthat::is.string(package_file)
     )
 
-    unpacking_dir <- fs::path_temp("archivist", tools::file_path_sans_ext(basename(archive)))
+    unpacking_dir <- fs::path_temp("pkg.peek", tools::file_path_sans_ext(basename(archive)))
     withr::defer_parent(fs::dir_delete(unpacking_dir))
 
     # Running "untar" is noisy if system tar has warnings/errors

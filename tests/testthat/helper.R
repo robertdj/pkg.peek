@@ -30,10 +30,10 @@ create_empty_package <- function(package_name, version, ...) {
 
     writeLines(c(
         paste("Package:", package_name),
-        "Title: Test package for archivist",
+        "Title: Test package for pkg.peek",
         paste("Version:", version),
         "Authors@R: person('First', 'Last', role = c('aut', 'cre'), email = 'first.last@example.com')",
-        "Description: Test package for archivist.",
+        "Description: Test package for pkg.peek.",
         "License: MIT",
         "Encoding: UTF-8",
         "LazyData: true"
