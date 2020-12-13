@@ -1,8 +1,8 @@
 Package: pkg.peek
-Title: Get information from R package archives
+Title: Peek into R package archives
 Version: 0.0.1
 Authors@R: person("Robert", "Dahl Jacobsen", role = c("aut", "cre"), email = "git@dahl-jacobsen.dk")
-Description: Get information from R package archives (in `tar.gz`, `tgz` or `zip` format).
+Description: Peek into R package archives to get information about the package and metadata about its origin.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
