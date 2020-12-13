@@ -1,4 +1,4 @@
 library(testthat)
-library(archivist)
+library(pkg.peek)
 
-test_check("archivist")
+test_check("pkg.peek")

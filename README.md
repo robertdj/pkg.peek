@@ -1,19 +1,19 @@
-archivist
-=========
+pkg.peek
+========
 
 <!-- badges: start -->
 <!-- badges: end -->
 
 R packages are bundled in a `tar.gz`, a `tgz` or a `zip` archive.
-Information about a package is included in the archive and {archivist} can help to extract it.
+Information about a package is included in the archive and {pkg.peek} can help to extract it.
 As an example, if the archive contains a binary package it includes the version of R used to compile it.
 
 ## Installation
 
-You can install the released version of archivist from [CRAN](https://CRAN.R-project.org) with:
+{pkg.peek} is only on GitHub and can be installed using the [remotes package](https://remotes.r-lib.org) with the command:
 
 ``` r
-install.packages("archivist")
+remotes::install_github("robertdj/pkg.peek")
 ```
 
 ## Example
@@ -21,7 +21,7 @@ install.packages("archivist")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(archivist)
+library(pkg.peek)
 ## basic example code
 ```
 
