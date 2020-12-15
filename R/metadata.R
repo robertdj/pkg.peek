@@ -19,6 +19,7 @@ get_package_meta <- function(archive) {
     # TODO: Check that archive is a compiled package
 
     meta_file <- get_file_in_archive(archive, fs::path(package_name, "Meta", "package.rds"))
+    on.exit(fs::file_delete(meta_file), add = TRUE)
 
     meta <- tryCatch(readRDS(meta_file), error = identity)
 
