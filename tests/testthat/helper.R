@@ -16,9 +16,6 @@ make_corrupted_archive <- function(tmp_file) {
 
 
 create_empty_package <- function(package_name, version, ...) {
-    if (!rlang::is_installed("pkgbuild"))
-        rlang::abort("'create_empty_package' requires pkgbuild")
-
     package_path <- fs::path_temp(package_name)
     fs::dir_create(package_path)
     withr::defer(fs::dir_delete(package_path))

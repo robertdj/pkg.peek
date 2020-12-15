@@ -32,8 +32,6 @@ get_file_in_archive <- function(archive, package_file) {
             utils::untar(archive, files = package_file, exdir = unpacking_dir),
             warning = identity
         )
-    } else {
-        rlang::abort("Unknown archive extension")
     }
 
     if (inherits(status, "warning"))
