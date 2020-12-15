@@ -8,4 +8,3 @@ test_that("Get NAMESPACE from source package", {
 test_that("Error getting non-existing file", {
     expect_error(get_file_in_archive(source_package, "NAMESPACE"))
 })
-

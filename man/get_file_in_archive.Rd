@@ -12,9 +12,12 @@ get_file_in_archive(archive, package_file)
 \item{package_file}{\verb{[character]} The file inside the archive.}
 }
 \value{
-The path to the \emph{extracted} \code{package_file}. This will be in the R session's temporary
-folder.
+The path to the \emph{extracted} \code{package_file}.
 }
 \description{
 Get a file in a compressed archive.
+}
+\details{
+The extracted file will be in the R session's temporary folder and will \emph{not} be
+deleted (before the temporary folder is deleted upon ending the R session)..
 }
