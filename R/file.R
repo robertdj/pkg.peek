@@ -12,9 +12,9 @@
 #'
 #' @export
 get_file_in_archive <- function(archive, package_file) {
-    assertthat::assert_that(
-        assertthat::is.string(archive),
-        assertthat::is.string(package_file)
+    stopifnot(
+        is_string(archive),
+        is_string(package_file)
     )
 
     unpacking_dir <- fs::path_temp("pkg.peek", tools::file_path_sans_ext(basename(archive)))

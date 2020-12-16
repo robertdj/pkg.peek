@@ -15,3 +15,8 @@ package_ext <- function(archive_file) {
 
     match.arg(file_ext, c("tar.gz", "tgz", "zip"))
 }
+
+
+is_string <- function(x) {
+    is.character(x) && length(x) == 1
+}
