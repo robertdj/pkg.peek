@@ -10,7 +10,7 @@ get_r_version(archive)
 \item{archive}{\verb{[character]} The path of the archive.}
 }
 \value{
-The package as a \code{R_system_version} -- see \code{\link[=getRversion]{getRversion()}}.
+The package as an \code{R_system_version} -- see \code{\link[=getRversion]{getRversion()}}.
 }
 \description{
 Get the R version used to build the package archive.
