@@ -16,6 +16,6 @@ The package meta data as a list.
 The package meta data is a parsed version of the \code{DESCRIPTION} file plus information about the
 installation/compilation of the package.
 Note that this only works for \strong{compiled} package archives, that is, archives that are generated
-with \code{devtools::build(binary = TRUE)} or on the command line with\preformatted{R CMD INSTALL --build <package folder>
+with \code{devtools::build(binary = TRUE)} or on the command line with\preformatted{R CMD INSTALL --build
 }
 }

@@ -4,7 +4,7 @@
 #'
 #' @inheritParams get_file_in_archive
 #'
-#' @return The package as a `R_system_version` -- see [getRversion()].
+#' @return The package as an `R_system_version` -- see [getRversion()].
 #'
 #' @export
 get_r_version <- function(archive) {

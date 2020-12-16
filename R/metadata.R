@@ -5,7 +5,7 @@
 #' Note that this only works for **compiled** package archives, that is, archives that are generated
 #' with `devtools::build(binary = TRUE)` or on the command line with
 #' ```
-#' R CMD INSTALL --build <package folder>
+#' R CMD INSTALL --build
 #' ```
 #'
 #' @inheritParams get_file_in_archive
@@ -15,8 +15,6 @@
 #' @export
 get_package_meta <- function(archive) {
     package_name <- package_name_from_filename(archive)
-
-    # TODO: Check that archive is a compiled package
 
     meta_file <- get_file_in_archive(archive, fs::path(package_name, "Meta", "package.rds"))
     on.exit(fs::file_delete(meta_file), add = TRUE)
