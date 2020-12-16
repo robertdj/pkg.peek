@@ -5,5 +5,5 @@ test_that("Get meta data from binary package", {
 
 
 test_that("Error getting meta data from source package", {
-    expect_error(get_package_meta(source_package))
+    expect_error(get_package_meta(source_package), regexp = "Meta/package.rds does not exist")
 })
