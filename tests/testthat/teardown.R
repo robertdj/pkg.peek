@@ -1,2 +1,1 @@
-fs::file_delete(source_package)
-fs::file_delete(binary_package)
+file.remove(c(source_package, binary_package))

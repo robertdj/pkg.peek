@@ -8,8 +8,8 @@
 get_package_desc <- function(archive) {
     package_name <- package_name_from_filename(archive)
 
-    desc_file <- get_file_in_archive(archive, fs::path(package_name, "DESCRIPTION"))
-    on.exit(fs::file_delete(desc_file), add = TRUE)
+    desc_file <- get_file_in_archive(archive, paste(package_name, "DESCRIPTION", sep = "/"))
+    on.exit(file.remove(desc_file), add = TRUE)
 
     desc <- tryCatch(read.dcf(desc_file), error = identity)
 
