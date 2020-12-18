@@ -17,7 +17,7 @@ get_file_in_archive <- function(archive, package_file) {
         is_string(package_file)
     )
 
-    unpacking_dir <- fs::path_temp("pkg.peek", tools::file_path_sans_ext(basename(archive)))
+    unpacking_dir <- file.path(tempdir(), "pkg.peek", tools::file_path_sans_ext(basename(archive)))
 
     # Running "untar" is noisy if system tar has warnings/errors
     # I don't know how to avoid this, since untar does not allow passing arguments on to "system"
@@ -37,5 +37,5 @@ get_file_in_archive <- function(archive, package_file) {
     if (inherits(status, "warning"))
         stop(package_file, " does not exist in ", archive)
 
-    fs::path(unpacking_dir, package_file)
+    file.path(unpacking_dir, package_file)
 }

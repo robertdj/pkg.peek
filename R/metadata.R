@@ -16,8 +16,9 @@
 get_package_meta <- function(archive) {
     package_name <- package_name_from_filename(archive)
 
-    meta_file <- get_file_in_archive(archive, fs::path(package_name, "Meta", "package.rds"))
-    on.exit(fs::file_delete(meta_file), add = TRUE)
+    meta_file <- get_file_in_archive(archive, paste(package_name, "Meta", "package.rds", sep = "/"))
+    # on.exit(file.remove(meta_file), add = TRUE)
+    on.exit(unlink(dirname(meta_file)), add = TRUE)
 
     meta <- tryCatch(readRDS(meta_file), error = identity)
 

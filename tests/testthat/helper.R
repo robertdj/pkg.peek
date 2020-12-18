@@ -1,9 +1,12 @@
 make_corrupted_archive <- function(tmp_file) {
     withr::with_tempdir({
-        fs::dir_create(dirname(tmp_file))
+        parent_dir <- dirname(tmp_file)
+        if (!dir.exists(parent_dir))
+            dir.create(parent_dir, recursive = TRUE)
+
         writeLines("foobar", con = tmp_file)
 
-        targz_file <-  fs::path_temp("baz_0.0.1.tar.gz")
+        targz_file <- file.path(tempdir(), "baz_0.0.1.tar.gz")
 
         utils::tar(
             tarfile = targz_file, files = tmp_file,
@@ -16,13 +19,15 @@ make_corrupted_archive <- function(tmp_file) {
 
 
 create_empty_package <- function(package_name, version, ...) {
-    package_path <- fs::path_temp(package_name)
-    fs::dir_create(package_path)
-    withr::defer(fs::dir_delete(package_path))
+    package_path <- file.path(tempdir(), package_name)
+    if (!dir.exists(package_path))
+        dir.create(package_path)
+
+    withr::defer(unlink(package_path, recursive = TRUE))
 
     writeLines(
         "exportPattern(\"^[^\\\\.]\")",
-        con = fs::path(package_path, "NAMESPACE")
+        con = file.path(package_path, "NAMESPACE")
     )
 
     writeLines(c(
@@ -35,7 +40,7 @@ create_empty_package <- function(package_name, version, ...) {
         "Encoding: UTF-8",
         "LazyData: true"
         ),
-        con = fs::path(package_path, "DESCRIPTION")
+        con = file.path(package_path, "DESCRIPTION")
     )
 
     pkgbuild::build(path = package_path, ...)
