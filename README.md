@@ -8,7 +8,7 @@ pkg.peek
 R packages are bundled in a `tar.gz`, a `tgz` or a `zip` archive.
 Information about a package is included in the archive and {pkg.peek} can help to extract it.
 
-My usecase is in the [{cranitor} package](https://github.com/robertdj/cranitor) where an archive should handled according to the operating system and R version used to generate it.
+My usecase is in the [{cranitor} package](https://github.com/robertdj/cranitor) where an archive is handled according to the operating system and R version used to generate it.
 
 
 ## Installation
