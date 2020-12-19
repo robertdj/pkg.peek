@@ -14,6 +14,7 @@ Depends:
 Imports:
     utils
 Suggests:
+    covr,
     pkgbuild,
     testthat (>= 2.1.0),
     withr
