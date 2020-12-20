@@ -14,6 +14,15 @@ test_that("Get DESCRIPTION from binary package", {
 })
 
 
+test_that("Binary package is built", {
+    expect_true(is_package_built(binary_package))
+})
+
+
+test_that("Source package is not built", {
+    expect_false(is_package_built(source_package))
+})
+
 # Get expected errors -------------------------------------------------------------------------
 
 test_that("Error getting non-existing DESCRIPTION", {
