@@ -10,7 +10,6 @@ get_package_desc <- function(archive) {
 
     desc_file <- get_file_in_archive(archive, paste(package_name, "DESCRIPTION", sep = "/"))
     on.exit(file.remove(desc_file), add = TRUE)
-    # on.exit(unlink(dirname(desc_file)), add = TRUE)
 
     desc <- tryCatch(read.dcf(desc_file), error = identity)
 
@@ -32,9 +31,8 @@ get_package_desc <- function(archive) {
 #' @export
 is_package_built <- function(archive) {
     desc <- get_package_desc(archive)
-    built <- desc["Built"]
 
-    if (is.na(built))
+    if (is.na(desc["Built"]))
         return(FALSE)
     else
         return(TRUE)
