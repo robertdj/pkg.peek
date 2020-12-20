@@ -21,24 +21,21 @@ get_package_desc <- function(archive) {
 }
 
 
-#' Get fields from DESCRIPTION file
+#' Is package built?
+#'
+#' Determine if a package archive is built/compiled. Only relevant for `tar.gz` archives (on Linux).
 #'
 #' @inheritParams get_file_in_archive
-#' @param field `[character]` A vector of field names to return.
 #'
-#' @return The fields in a named vector.
+#' @return A boolean.
 #'
 #' @export
-get_desc_field <- function(archive, field) {
-    assertthat::assert_that(
-        is.character(field)
-    )
-
+is_package_built <- function(archive) {
     desc <- get_package_desc(archive)
+    built <- desc["Built"]
 
-    desc_entry_matches <- field %in% names(desc)
-    if (!all(desc_entry_matches))
-        stop("These fields are not in DESCRIPTION: ", paste(field[!desc_entry_matches], collapse = ", "))
-
-    desc[field]
+    if (is.na(built))
+        return(FALSE)
+    else
+        return(TRUE)
 }
