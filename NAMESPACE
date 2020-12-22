@@ -3,5 +3,7 @@
 export(get_file_in_archive)
 export(get_package_desc)
 export(get_package_meta)
+export(get_package_name)
+export(get_package_version)
 export(get_r_version)
 export(is_package_built)
