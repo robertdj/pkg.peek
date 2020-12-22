@@ -3,7 +3,7 @@ pkg.peek
 
 <!-- badges: start -->
 [![R build status](https://github.com/robertdj/pkg.peek/workflows/R-CMD-check/badge.svg)](https://github.com/robertdj/pkg.peek/actions)
-[![Codecov test coverage](https://codecov.io/gh/robertdj/pkg.peek/branch/master/graph/badge.svg)](https://codecov.io/gh/robertdj/pkg.peek?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/robertdj/pkg.peek/branch/master/graph/badge.svg)](https://codecov.io/gh/robertdj/pkg.peek?branch=main)
 <!-- badges: end -->
 
 R packages are bundled in a `tar.gz`, a `tgz` or a `zip` archive.
