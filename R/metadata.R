@@ -16,9 +16,10 @@
 get_package_meta <- function(archive) {
     package_name <- package_name_from_filename(archive)
 
-    meta_file <- get_file_in_archive(paste(package_name, "Meta", "package.rds", sep = "/"), archive)
-    # TODO: unpackage_dir is used internally in get_file_in_archive. Is using it here complecting?
-    on.exit(unlink(unpacking_dir(archive), recursive = TRUE), add = TRUE)
+    extract_dir <- unpacking_dir(archive)
+    metadata_path <- paste(package_name, "Meta", "package.rds", sep = "/")
+    meta_file <- get_file_in_archive(metadata_path, archive, extract_dir)
+    on.exit(unlink(extract_dir, recursive = TRUE), add = TRUE)
 
     meta <- tryCatch(readRDS(meta_file), error = identity)
 
