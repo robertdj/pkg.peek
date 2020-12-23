@@ -4,21 +4,23 @@
 \alias{get_file_in_archive}
 \title{Get file in archive}
 \usage{
-get_file_in_archive(package_file, archive)
+get_file_in_archive(package_file, archive, extract_dir)
 }
 \arguments{
 \item{package_file}{\verb{[character]} The file inside the archive.}
 
 \item{archive}{\verb{[character]} The path of the archive.}
+
+\item{extract_dir}{\verb{[character]} The folder to extract \code{package_file} to. If missing it will be
+in the R session's temporary folder.}
 }
 \value{
-The path to the \emph{extracted} \code{package_file}.
+The path to the extracted \code{package_file}.
 }
 \description{
 Get a file in a compressed archive.
 }
 \details{
-The extracted \code{package_file} is in the R session's temporary folder and is \emph{not} deleted
-automatically (before the temporary folder is deleted upon ending the R session). Cleaning up is
-left to the caller.
+The extracted \code{package_file} is \emph{not} deleted automatically. Cleaning up is left to the
+caller.
 }

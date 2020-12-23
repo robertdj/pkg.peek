@@ -8,8 +8,10 @@
 get_package_desc <- function(archive) {
     package_name <- package_name_from_filename(archive)
 
-    desc_file <- get_file_in_archive(paste(package_name, "DESCRIPTION", sep = "/"), archive)
-    on.exit(file.remove(desc_file), add = TRUE)
+    extract_dir <- unpacking_dir(archive)
+    desc_path <- file.path(package_name, "DESCRIPTION", fsep = "/")
+    desc_file <- get_file_in_archive(desc_path, archive, extract_dir)
+    on.exit(unlink(extract_dir, recursive = TRUE), add = TRUE)
 
     desc <- tryCatch(read.dcf(desc_file), error = identity)
 

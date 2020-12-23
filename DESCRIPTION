@@ -1,6 +1,6 @@
 Package: pkg.peek
 Title: Peek into R package archives
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: person("Robert", "Dahl Jacobsen", role = c("aut", "cre"), email = "git@dahl-jacobsen.dk")
 Description: Peek into R package archives to get information about the package and metadata about its origin.
 License: MIT + file LICENSE
