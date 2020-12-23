@@ -20,3 +20,11 @@ package_ext <- function(archive_file) {
 is_string <- function(x) {
     is.character(x) && length(x) == 1
 }
+
+
+unpacking_dir <- function(archive) {
+    file.path(
+        tempdir(), "pkg.peek",
+        tools::file_path_sans_ext(basename(archive), compression = TRUE)
+    )
+}

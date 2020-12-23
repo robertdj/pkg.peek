@@ -18,19 +18,19 @@ get_file_in_archive <- function(package_file, archive) {
         is_string(package_file)
     )
 
-    unpacking_dir <- file.path(tempdir(), "pkg.peek", tools::file_path_sans_ext(basename(archive)))
+    extract_dir <- unpacking_dir(archive)
 
     # Running "untar" is noisy if system tar has warnings/errors
     # I don't know how to avoid this, since untar does not allow passing arguments on to "system"
     # (ignore.stdout and ignore.stderr)
     if (package_ext(archive) == "zip") {
         status <- tryCatch(
-            utils::unzip(archive, files = package_file, exdir = unpacking_dir),
+            utils::unzip(archive, files = package_file, exdir = extract_dir),
             warning = identity
         )
     } else if (package_ext(archive) %in% c("tgz", "tar.gz")) {
         status <- tryCatch(
-            utils::untar(archive, files = package_file, exdir = unpacking_dir),
+            utils::untar(archive, files = package_file, exdir = extract_dir),
             warning = identity
         )
     }
@@ -38,5 +38,5 @@ get_file_in_archive <- function(package_file, archive) {
     if (inherits(status, "warning"))
         stop(package_file, " does not exist in ", archive)
 
-    file.path(unpacking_dir, package_file)
+    file.path(extract_dir, package_file)
 }
