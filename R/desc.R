@@ -9,7 +9,8 @@ get_package_desc <- function(archive) {
     package_name <- package_name_from_filename(archive)
 
     desc_file <- get_file_in_archive(paste(package_name, "DESCRIPTION", sep = "/"), archive)
-    on.exit(file.remove(desc_file), add = TRUE)
+    # TODO: unpackage_dir is used internally in get_file_in_archive. Is using it here complecting?
+    on.exit(unlink(unpacking_dir(archive), recursive = TRUE), add = TRUE)
 
     desc <- tryCatch(read.dcf(desc_file), error = identity)
 
