@@ -2,16 +2,17 @@
 #'
 #' Get a file in a compressed archive.
 #'
-#' @details The extracted file will be in the R session's temporary folder and will *not* be
-#' deleted (before the temporary folder is deleted upon ending the R session)..
+#' @details The extracted `package_file` is in the R session's temporary folder and is *not* deleted
+#' automatically (before the temporary folder is deleted upon ending the R session). Cleaning up is
+#' left to the caller.
 #'
-#' @param archive `[character]` The path of the archive.
 #' @param package_file `[character]` The file inside the archive.
+#' @param archive `[character]` The path of the archive.
 #'
 #' @return The path to the *extracted* `package_file`.
 #'
 #' @export
-get_file_in_archive <- function(archive, package_file) {
+get_file_in_archive <- function(package_file, archive) {
     stopifnot(
         is_string(archive),
         is_string(package_file)

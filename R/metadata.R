@@ -16,7 +16,7 @@
 get_package_meta <- function(archive) {
     package_name <- package_name_from_filename(archive)
 
-    meta_file <- get_file_in_archive(archive, paste(package_name, "Meta", "package.rds", sep = "/"))
+    meta_file <- get_file_in_archive(paste(package_name, "Meta", "package.rds", sep = "/"), archive)
     # on.exit(file.remove(meta_file), add = TRUE)
     on.exit(unlink(dirname(meta_file)), add = TRUE)
 
