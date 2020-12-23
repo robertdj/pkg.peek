@@ -17,7 +17,7 @@ get_package_meta <- function(archive) {
     package_name <- package_name_from_filename(archive)
 
     extract_dir <- unpacking_dir(archive)
-    metadata_path <- paste(package_name, "Meta", "package.rds", sep = "/")
+    metadata_path <- file.path(package_name, "Meta", "package.rds", fsep = "/")
     meta_file <- get_file_in_archive(metadata_path, archive, extract_dir)
     on.exit(unlink(extract_dir, recursive = TRUE), add = TRUE)
 
