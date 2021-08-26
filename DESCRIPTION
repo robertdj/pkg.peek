@@ -1,5 +1,5 @@
 Package: pkg.peek
-Title: Peek into R package archives
+Title: Peek into R Package Archives
 Version: 0.3.0
 Authors@R: person("Robert", "Dahl Jacobsen", role = c("aut", "cre"), email = "git@dahl-jacobsen.dk")
 Description: Peek into R package archives to get information about the package and metadata about its origin.
@@ -14,7 +14,6 @@ Depends:
 Imports:
     utils
 Suggests:
-    covr,
     pkgbuild,
     testthat (>= 2.1.0),
     withr
