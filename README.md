@@ -3,13 +3,11 @@ pkg.peek
 
 <!-- badges: start -->
 [![R build status](https://github.com/robertdj/pkg.peek/workflows/R-CMD-check/badge.svg)](https://github.com/robertdj/pkg.peek/actions)
-[![Codecov test coverage](https://codecov.io/gh/robertdj/pkg.peek/branch/master/graph/badge.svg)](https://codecov.io/gh/robertdj/pkg.peek?branch=main)
+[![Codecov test coverage](https://codecov.io/gh/robertdj/pkg.peek/branch/main/graph/badge.svg)](https://codecov.io/gh/robertdj/pkg.peek?branch=main)
 <!-- badges: end -->
 
 R packages are bundled in a `tar.gz`, a `tgz` or a `zip` archive.
 Information about a package is included in the archive and {pkg.peek} can help to extract it.
-
-My usecase is in the [{cranitor} package](https://github.com/robertdj/cranitor) where an archive is handled according to the operating system and R version used to generate it.
 
 
 ## Installation
